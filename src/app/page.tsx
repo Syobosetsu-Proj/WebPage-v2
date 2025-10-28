@@ -48,7 +48,7 @@ export default async function Home() {
   const org = await getOrgData();
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950 fade-in">
       <Image
         src="/bk1.png"
         alt="Space background"
@@ -57,7 +57,7 @@ export default async function Home() {
         className="object-cover"
       />
 
-      <section>
+      <section className="fade-in">
         <div className="relative z-10 container mx-auto px-4 py-16">
           <div className="flex w-full flex-col items-center justify-center rounded-lg p-8">
             <div className="mt-8 text-center">
@@ -75,5 +75,6 @@ export default async function Home() {
         </div>
       </section>
     </div>
+
   );
 }
