@@ -48,7 +48,7 @@ export default async function Home() {
   const org = await getOrgData();
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950">
       <Image
         src="/bk1.png"
         alt="Space background"
