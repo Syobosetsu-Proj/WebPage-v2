@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 async function getOrgData() {
     const res = await fetch(`https://api.github.com/orgs/Syobosetsu-Proj`, {
@@ -32,7 +33,7 @@ export function GithubButton(sublink: string) {
 
 export function BookButton(link: string, text: string) {
     return (
-        <a
+        <Link
             href={link}
             rel="noopener noreferrer"
             className="mt-10 py-1.5 px-4 inline-flex items-center justify-center gap-2 transition-colors bg-green-800 active:bg-green-950 font-medium border-green-900 text-white rounded-lg hover:bg-green-900 disabled:opacity-50"
@@ -40,7 +41,7 @@ export function BookButton(link: string, text: string) {
             <img src="/icons/book.svg" alt="GitHub" className="w-5 h-5 filter invert" />
 
             <span>{text}</span>
-        </a>
+        </Link>
     );
 }
 
@@ -48,15 +49,7 @@ export default async function Home() {
     const org = await getOrgData();
 
     return (
-        <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950 fade-in">
-            <Image
-                src="/bk1.png"
-                alt="Space background"
-                fill
-                unoptimized
-                className="object-cover"
-            />
-
+        <div className="relative min-h-screen flex items-center justify-center overflow-hidden fade-in">
             <section className="fade-in">
                 <div className="relative z-10 container mx-auto px-4 py-16">
                     <div className="flex w-full flex-col items-center justify-center rounded-lg p-8">
