@@ -6,7 +6,7 @@ on:
     types: [opened]
 jobs:
   run:
-    runs-on: [ self-hosted, Generic ]
+    runs-on: ubuntu-latest
     permissions:
       issues: write
       pull-requests: write
