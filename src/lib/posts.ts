@@ -7,19 +7,27 @@ const postsDirectory = path.join(process.cwd(), "posts");
 export function getAllPosts() {
     const fileNames = fs.readdirSync(postsDirectory);
 
-    return fileNames.map((fileName) => {
-        const slug = fileName.replace(/\.md$/, "");
-        const fullPath = path.join(postsDirectory, fileName);
-        const fileContents = fs.readFileSync(fullPath, "utf8");
+    return fileNames
+        .filter((fileName) => fileName.endsWith('.md'))
+        .map((fileName) => {
+            try {
+                const slug = fileName.replace(/\.md$/, "");
+                const fullPath = path.join(postsDirectory, fileName);
+                const fileContents = fs.readFileSync(fullPath, "utf8");
 
-        const { data, content } = matter(fileContents);
+                const { data, content } = matter(fileContents);
 
-        return {
-            slug,
-            meta: data,
-            content,
-        };
-    });
+                return {
+                    slug,
+                    meta: data,
+                    content,
+                };
+            } catch (error) {
+                console.error(`Error reading post ${fileName}:`, error);
+                return null;
+            }
+        })
+        .filter((post): post is NonNullable<typeof post> => post !== null);
 }
 
 export function getPostBySlug(slug: string) {
