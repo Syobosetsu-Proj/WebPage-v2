@@ -18,6 +18,7 @@ export default async function PostPage({ params }: Props) {
 
     const processedContent = await remark().use(html).process(post.content);
     const contentHtml = processedContent.toString();
+    console.log(contentHtml);
 
     return (
         <div className="min-h-screen text-neutral-100 py-20 px-6">
@@ -39,7 +40,7 @@ export default async function PostPage({ params }: Props) {
                 </header>
 
                 <div
-                    className="prose prose-invert prose-lg max-w-none"
+                    className="prose prose-invert lg:prose-xl max-w-none"
                     dangerouslySetInnerHTML={{ __html: contentHtml }}
                 />
 

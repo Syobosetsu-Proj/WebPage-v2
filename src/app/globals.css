@@ -29,6 +29,150 @@ body {
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    .prose {
+        color: #f7fafc;
+    }
+
+    /* 見出し */
+    .prose h1 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        font-weight: 700;
+        padding: 10px 0;
+    }
+
+    .prose h2 {
+        font-size: 1.75rem;
+        line-height: 2.25rem;
+        font-weight: 700;
+        padding: 10px 0;
+    }
+
+    .prose h3 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 700;
+        padding: 10px 0;
+    }
+
+    .prose h4 {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-weight: 700;
+        padding: 8px 0;
+    }
+
+    .prose h5 {
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        font-weight: 700;
+        padding: 6px 0;
+    }
+
+    .prose h6 {
+        font-size: 1rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+        padding: 4px 0;
+    }
+
+    /* 段落 */
+    .prose p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        padding-bottom: 10px;
+    }
+
+    /* 水平線 */
+    .prose hr {
+        border-color: #4a5568;
+        margin: 30px 0;
+    }
+
+    /* リスト */
+    .prose ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .prose ol {
+        list-style-type: decimal;
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .prose li {
+        margin-bottom: 0.5rem;
+    }
+
+    /* リンク */
+    .prose a {
+        color: #63b3ed;
+        text-decoration: underline;
+    }
+
+    .prose a:hover {
+        color: #4299e1;
+    }
+
+    /* 引用 */
+    .prose blockquote {
+        border-left: 4px solid #4a5568;
+        padding-left: 1rem;
+        color: #a0aec0;
+        font-style: italic;
+        margin: 1rem 0;
+    }
+
+    /* コードインライン */
+    .prose code {
+        background-color: #252525;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.95rem;
+        font-family: "Fira Code", monospace;
+    }
+
+    .prose pre {
+        background-color: #252525;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        font-size: 0.95rem;
+        font-family: "Fira Code", monospace;
+        line-height: 1.5rem;
+        white-space: pre-wrap;
+    }
+
+    /* 画像 */
+    .prose img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin: 1rem 0;
+    }
+
+    /* テーブル */
+    .prose table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+    }
+
+    .prose th,
+    .prose td {
+        border: 1px solid #4a5568;
+        padding: 0.5rem;
+        text-align: left;
+    }
+
+    .prose th {
+        background-color: #2d3748;
+    }
+}
+
+
 @layer utilities {
     .fade-in {
         opacity: 0;
