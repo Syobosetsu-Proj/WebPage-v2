@@ -40,7 +40,7 @@ description: "簡易的なブログができちゃいましたよ。どうしよ
 
 これは段落です。文中に `コードテキスト`を含みます。
 
-```
+```text
 This is CodeBlock Line 1.
 This is CodeBlock Line 2.
 This is CodeBlock Line 3.
