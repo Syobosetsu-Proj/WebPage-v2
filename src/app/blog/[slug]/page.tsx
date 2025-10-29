@@ -44,7 +44,7 @@ export default async function PostPage({ params }: Props) {
                 />
 
                 <footer className="border-t border-neutral-800 pt-6 mt-10">
-                    <Link href="../blog" className="mt-6 text-sm font-bold text-green-400 tracking-wide uppercase">
+                    <Link href="/blog" className="mt-6 text-sm font-bold text-green-400 tracking-wide uppercase">
                         → Back
                     </Link>
                 </footer>
