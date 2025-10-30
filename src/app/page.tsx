@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { GithubButton, BookButton } from "@/components/ui/buttons";
 
 async function getOrgData() {
