@@ -1,9 +1,8 @@
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
-import { BackButton } from "@/components/ui/buttons";
-import { notFound } from 'next/navigation';
 import { remark } from "remark";
 import html from "remark-html";
 import Link from "next/link";
+import { notFound } from 'next/navigation';
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -47,7 +46,9 @@ export default async function PostPage({ params }: Props) {
                     />
 
                     <footer className="border-t border-neutral-800 pt-6 mt-10">
-                        <BackButton />
+                        <Link href="/blog" className="mt-6 text-sm font-bold text-green-400 tracking-wide uppercase">
+                            → Back
+                        </Link>
                     </footer>
                 </article>
             </div>
