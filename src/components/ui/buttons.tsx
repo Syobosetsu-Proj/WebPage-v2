@@ -1,4 +1,7 @@
+"use client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import React from "react";
 
 export function GithubButton({ sublink }: { sublink: string }) {
     return (
@@ -15,7 +18,7 @@ export function GithubButton({ sublink }: { sublink: string }) {
     );
 }
 
-export function BookButton({ link, children }: { link: string, children: React.ReactNode }) {
+export function BookButton({ link, children }: { link: string; children: React.ReactNode }) {
     return (
         <Link
             href={link}
@@ -28,10 +31,28 @@ export function BookButton({ link, children }: { link: string, children: React.R
     );
 }
 
-export function BackButton({ link }: { link: string }) {
+export function BackButton({ href, label = "Back" }: { href?: string; label?: string }) {
+    const router = useRouter();
+
+    const handleClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        if (href) {
+            router.push(href);
+        } else {
+            router.back();
+        }
+    };
+
     return (
-        <Link href={link} className="mt-6 text-sm font-bold text-green-400 tracking-wide uppercase">
-            → Back
-        </Link>
+        <button
+            onClick={handleClick}
+            aria-label={label}
+            className="inline-flex items-center gap-3 px-3 py-2 bg-neutral-900/80 border border-neutral-800 text-neutral-100 rounded-lg shadow-sm hover:border-green-500/60 hover:text-green-300 hover:-translate-y-0.5 transition transform"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L6.414 9H17a1 1 0 110 2H6.414l3.293 3.293a1 1 0 010 1.414z" clipRule="evenodd" />
+            </svg>
+            <span className="text-sm font-medium">{label}</span>
+        </button>
     );
 }
