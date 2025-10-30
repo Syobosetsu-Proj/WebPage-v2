@@ -47,7 +47,7 @@ export function BackButton({ href, label = "Back" }: { href?: string; label?: st
         <button
             onClick={handleClick}
             aria-label={label}
-            className="inline-flex items-center gap-3 px-3 py-2 bg-neutral-900/80 border border-neutral-800 text-neutral-100 rounded-lg shadow-sm hover:border-green-500/60 hover:text-green-300 hover:-translate-y-0.5 transition transform"
+            className="inline-flex items-center gap-3 px-3 py-2 bg-neutral-900/80 border border-neutral-800 text-neutral-100 rounded-lg shadow-sm hover:border-green-500/60 hover:text-green-300"
         >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
                 <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L6.414 9H17a1 1 0 110 2H6.414l3.293 3.293a1 1 0 010 1.414z" clipRule="evenodd" />
