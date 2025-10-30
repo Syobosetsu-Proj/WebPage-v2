@@ -27,3 +27,11 @@ export function BookButton({ link, children }: { link: string, children: React.R
         </Link>
     );
 }
+
+export function BackButton({ link }: { link: string }) {
+    return (
+        <Link href={link} className="mt-6 text-sm font-bold text-green-400 tracking-wide uppercase">
+            → Back
+        </Link>
+    );
+}
