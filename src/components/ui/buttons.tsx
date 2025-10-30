@@ -21,7 +21,7 @@ export function BookButton({ link, children }: { link: string, children: React.R
             href={link}
             className="mt-10 py-1.5 px-4 inline-flex items-center justify-center gap-2 transition-colors bg-green-800 active:bg-green-950 font-medium border-green-900 text-white rounded-lg hover:bg-green-900 disabled:opacity-50"
         >
-            <img src="/icons/book.svg" alt="GitHub" className="w-5 h-5 filter invert" />
+            <img src="/icons/book.svg" alt="Book" className="w-5 h-5 filter invert" />
 
             <span>{children}</span>
         </Link>
