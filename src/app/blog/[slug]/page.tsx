@@ -47,7 +47,7 @@ export default async function PostPage({ params }: Props) {
                     />
 
                     <footer className="border-t border-neutral-800 pt-6 mt-10">
-                        <BackButton link="/blog" />
+                        <BackButton />
                     </footer>
                 </article>
             </div>
