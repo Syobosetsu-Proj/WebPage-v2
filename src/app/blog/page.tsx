@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
 import { getAllPosts } from "@/lib/posts";
+import { BackButton } from "@/components/ui/buttons";
+import Link from "next/link";
 
 export default async function BlogPage() {
     const posts = getAllPosts();
@@ -8,6 +8,9 @@ export default async function BlogPage() {
     return (
         <div className="text-neutral-100 py-20 px-6">
             <div className="max-w-3xl mx-auto">
+                <div className="flex items-center">
+                    <BackButton />
+                </div>
 
                 <ul className="mt-12 space-y-6">
                     {posts.map((post) => (
@@ -36,6 +39,8 @@ export default async function BlogPage() {
                     ))}
                 </ul>
             </div>
+
+            
         </div>
     );
 }
